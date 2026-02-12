@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaAI | Lung Cancer Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Lumina<span>AI</span></div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#upload">Analyze</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Next-Gen Lung Health Analysis</h1>
+                <p>Advanced CNN-powered screening for detection of abnormalities in lung MRI images.</p>
+                <a href="#upload" class="btn-primary">Get Started</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Precision AI Detection</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="icon">🔬</div>
+                        <h3>CNN Intelligence</h3>
+                        <p>Our deep learning architecture is trained on thousands of clinical MRI scans.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">⚡</div>
+                        <h3>Instant Analysis</h3>
+                        <p>Receive preliminary screening results within seconds of uploading.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔒</div>
+                        <h3>Private & Secure</h3>
+                        <p>Your medical data is processed with industry-standard encryption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload" class="upload-section">
+            <div class="container">
+                <h2>Upload MRI Scan</h2>
+                <p>Select a clear MRI image of the lungs for AI analysis.</p>
+                <div class="upload-container" id="drop-zone">
+                    <input type="file" id="file-input" hidden accept="image/*">
+                    <div class="upload-placeholder">
+                        <span class="upload-icon">📁</span>
+                        <p>Drag and drop or <span>browse</span></p>
+                        <small>Supports PNG, JPG (Max 16MB)</small>
+                    </div>
+                    <div id="preview-container" class="hidden">
+                        <img id="image-preview" src="" alt="MRI Preview">
+                        <button id="analyze-btn">Start Analysis</button>
+                    </div>
+                </div>
+
+                <div id="results" class="results-container hidden">
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                        <p>AI is processing your scan...</p>
+                    </div>
+                    <div id="result-content" class="hidden">
+                        <h3>Analysis Results</h3>
+                        <div class="probability-bar">
+                            <div id="prob-fill"></div>
+                        </div>
+                        <p id="result-text"></p>
+                        <small id="result-details"></small>
+                        <button id="reset-btn">New Analysis</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LuminaAI. For clinical screening purposes only.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
